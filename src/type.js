@@ -9,6 +9,8 @@ import isRegExp from './isRegExp.js'
 import isDate from './isDate.js'
 import isBoolean from './isBoolean.js'
 import isNumber from './isNumber.js'
+import isAsync from './isAsync.js'
+import isPromise from './isPromise.js'
 
 export {isFunction}
 export {isObject}
@@ -21,3 +23,5 @@ export {isRegExp}
 export {isDate}
 export {isBoolean}
 export {isNumber}
+export {isAsync}
+export {isPromise}

@@ -4,7 +4,7 @@ const fs = require('fs')
 const path = require('path')
 
 const src = path.resolve(__dirname, '../src')
-const cjsDist = path.resolve(__dirname, '../cjs')
+const cjsDist = path.resolve(__dirname, '../dist')
 
 const globalInputOptions = {
 
@@ -20,13 +20,11 @@ async function build (file) {
     input
   }, globalInputOptions)
   let outputOptions = Object.assign({
-    format: 'cjs',
+    format: 'es',
     file: path.resolve(cjsDist, file)
   }, globalOutputOptions)
   const bundle = await rollup.rollup(inputOptions)
-  console.log(bundle.imports); // an array of external dependencies
-  console.log(bundle.exports); // an array of names exported by the entry point
-  console.log(bundle.modules); // an array of module objects
+
   const { code, map } = await bundle.generate(outputOptions)
   await bundle.write(outputOptions)
 }
@@ -42,5 +40,5 @@ function getDirEntries (dir) {
   })
 }
 
-build('isObject.js')
+build('index.js')
 // build('isArray.js')
