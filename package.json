@@ -1,0 +1,54 @@
+{
+  "name": "jfun",
+  "version": "0.0.1",
+  "description": "javascript function",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc ava ./test",
+    "lint": "standard src/**",
+    "fix": "npm run lint -- --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jetiny/jfun.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jetiny/jfun/issues"
+  },
+  "homepage": "https://github.com/jetiny/jfun#readme",
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint-plugin-standard": "^3.0.1",
+    "expect.js": "^0.3.1",
+    "nyc": "^11.3.0",
+    "rollup": "^0.52.1",
+    "rollup-plugin-babel": "^3.0.2",
+    "standard": "^10.0.3",
+    "watch-cli": "^0.2.3"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "nyc": {
+    "exclude": [
+      "node_modules",
+      "test"
+    ]
+  },
+  "ava": {
+    "require": "babel-register",
+    "babel": "inherit"
+  },
+  "babel": {
+    "plugins": [
+      "transform-es2015-modules-commonjs"
+    ]
+  }
+}
