@@ -9,11 +9,15 @@ export default (name, value, duration) => {
     date = duration < 0 ? null : new Date(new Date().getTime() + duration)
   }
   let str = [
-    date ? `expires=${date.toGMTString()}` : '',
     `${name}=${encodeURIComponent(value)}`,
     `domain=${document.domain}`,
     'path=/',
-    ''
-  ].join('; ')
+  ]
+
+  if (date) {
+    str.push(`expires=${date.toGMTString()}`)
+  }
+  str = str.join('; ')
+
   document.cookie = str
 }
