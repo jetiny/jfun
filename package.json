@@ -12,8 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/jetiny/jfun.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "jetiny",
+    "email": "86287344@qq.com"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/jetiny/jfun/issues"
   },
