@@ -11,7 +11,7 @@ export default (name, value, duration) => {
   let str = [
     `${name}=${encodeURIComponent(value)}`,
     `domain=${document.domain}`,
-    'path=/',
+    'path=/'
   ]
 
   if (date) {
