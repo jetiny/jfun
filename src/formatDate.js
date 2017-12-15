@@ -27,7 +27,7 @@ export default (() => {
       while (val.length < len) {
         val = `0${val}`
       }
-      return val.substr(0, len)
+      return val.substr(val.length - len, len)
     }), pattern)
   }
 })()

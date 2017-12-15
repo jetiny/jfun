@@ -31,7 +31,7 @@ export default (() => {
     let str = ''
     let chr
     if (symbols) {
-      chars = chars.replace($s, '')
+      chars = chars.replace($s, '') + symbols
       charl = chars.length
     }
     while (size-- > 0) {

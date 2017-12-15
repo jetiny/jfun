@@ -5,6 +5,7 @@ import {formatDate} from '../src'
 test('formatDate', ava => {
   // should return the default formatDate
   expect(/^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}$/.test(formatDate())).to.eql(true)
+  expect(/^\d{4}-\d{2}-\d{2}\s\d{2}:\d{2}:\d{2}$/.test(formatDate(new Date()))).to.eql(true)
   // should work with delimiters
   expect(/^\[\d{4}\]/.test(formatDate('[YYYY]'))).to.eql(true)
   expect(/^\[\d{4}\d{2}\]/.test(formatDate('[YYYYMM]'))).to.eql(true)
@@ -28,6 +29,9 @@ test('formatDate', ava => {
   expect(/^\d{4}\d{2}\d{2}$/.test(formatDate('YYYYMMDD'))).to.eql(true)
   expect(/^\d{4}\d{2}\d{2}\d{2}$/.test(formatDate('YYYYMMDDss'))).to.eql(true)
   expect(/^\d{4}\d{2}\d{2}$/.test(formatDate('YYYYMMss'))).to.eql(true)
-  // should increment zero-based month
+  // 参数选项
+  expect(formatDate('2017-12-06', 'YY年MM月DD日')).to.eql('17年12月06日')
+  expect(formatDate(1513310471409, 'YY年MM月DD日')).to.eql('17年12月15日')
+  expect(formatDate(new Date(), 'YY年MM月DD日').length).to.eql(9)
   ava.pass()
 })
